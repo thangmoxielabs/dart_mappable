@@ -301,6 +301,10 @@ class _MapperContainerBase implements MapperContainer, TypeProvider {
     if (_cachedTypeMappers[type] case var m?) {
       return m;
     }
+    if (_mappers[type] case var m?) {
+      return m;
+    }
+
     var baseType = type.base;
     if (baseType == UnresolvedType) {
       baseType = type;

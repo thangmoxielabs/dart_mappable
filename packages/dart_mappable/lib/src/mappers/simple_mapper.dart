@@ -10,7 +10,7 @@ import 'mapping_context.dart';
 /// [SimpleMapper1] or [SimpleMapper2] interface instead, respectively.
 ///
 /// {@category Custom Mappers}
-abstract class SimpleMapper<T extends Object> extends _SimpleMapperBase<T> {
+abstract class SimpleMapper<T extends Object?> extends _SimpleMapperBase<T> {
   const SimpleMapper();
 
   T decode(Object value);
@@ -117,7 +117,7 @@ abstract class SimpleMapper2<T extends Object>
   Object? encode<A, B>(covariant T self);
 }
 
-abstract class _SimpleMapperBase<T extends Object> extends MapperBase<T> {
+abstract class _SimpleMapperBase<T extends Object?> extends MapperBase<T> {
   const _SimpleMapperBase();
 
   static MapperContainer? _container;
